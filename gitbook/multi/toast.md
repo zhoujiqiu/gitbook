@@ -23,3 +23,6 @@ Toast({
 });
 ```
 
+#### 演示
+[点击查看DEMO](https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/toast)
+

@@ -16,4 +16,4 @@ import Dialog from 'toon-ui/lib/components/dialog'
 ```
 
 ## 演示
-[点击查看DEMO](https://zhoujiqiu.github.io/toon-ui/dist/) 具体实例
+[点击查看DEMO实例](https://zhoujiqiu.github.io/toon-ui/dist/#!/demolist)

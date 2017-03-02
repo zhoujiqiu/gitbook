@@ -52,3 +52,5 @@ MessageBox.prompt('请输入姓名').then(({ value, action }) => {
   ...
 });
 ```
+#### 演示
+[点击查看DEMO](https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/dialog)
