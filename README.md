@@ -15,6 +15,6 @@ npm install
 # 启动
 gulp
 
-# 生成目录 在/doc目录下即为您所要的html电子书，启动页面为index.html
+# 生成目录 在/docs目录下即为您所要的html电子书，启动页面为index.html
 
 ```

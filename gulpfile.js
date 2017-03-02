@@ -47,7 +47,7 @@ gulp.task('build', ['write'], shell.task([
 
 // deploy 单文件
 gulp.task('deploy', ['build'], function () {
-  fs.readFile('./doc/index.html', 'utf-8', function (err, html) {
+  fs.readFile('./docs/index.html', 'utf-8', function (err, html) {
     if (err) {
       console.error('===not find index.html===');
       return;
@@ -64,12 +64,12 @@ gulp.task('deploy', ['build'], function () {
         that.removeClass('active');
       }
     });
-    fs.writeFile('./doc/index.html', $.html());
+    fs.writeFile('./docs/index.html', $.html());
   });
 });
 
 gulp.task('m2h-s', ['deploy'], function () {
-  gulp.src('./doc').pipe(webSever({
+  gulp.src('./docs').pipe(webSever({
     port:'9090',
     livereload: true,
     open: true,
@@ -81,7 +81,7 @@ gulp.task('m2h-s', ['deploy'], function () {
 
 // clean
 gulp.task('clean', shell.task([
-  'rm -rf ./doc/**/*.*'
+  'rm -rf ./docs/**/*.*'
 ]));
 
 // create2 summary.md
@@ -132,12 +132,12 @@ gulp.task('build2', ['create2'], function () {
 
 // deploy2
 gulp.task('deploy2', ['build2'], shell.task([
-  'gitbook build ./gitbook/multi ./doc'
+  'gitbook build ./gitbook/multi ./docs'
 ]));
 
 // m2h-m
 gulp.task('default', ['deploy2'], function () {
-  gulp.src('./doc').pipe(webSever({
+  gulp.src('./docs').pipe(webSever({
     host: '127.0.0.1',
     port:'9091',
     livereload: true,
