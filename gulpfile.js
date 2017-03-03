@@ -11,16 +11,17 @@ var cheerio = require('cheerio');
 var listFiles = require('list-files');
 var firstline = require('firstline');
 var webSever = require('gulp-webserver');
+var path = require('path');
 
 // create summary.md
 gulp.task('create', function () {
-  fs.writeFile('./gitbook/single/SUMMARY.md', '');
+  fs.writeFile('gitbook/single/SUMMARY.md', '');
 });
 
 // write summary.md
 gulp.task('write', ['create'], function () {
   var isBash = false;
-  lineRead.readLineFromFile('./gitbook/single/README.md').forEach(function (line) {
+  lineRead.readLineFromFile('gitbook/single/README.md').forEach(function (line) {
     // 代码片段#号过滤
     if (line.indexOf('``` bash') === 0) {
       isBash = true;
@@ -35,19 +36,19 @@ gulp.task('write', ['create'], function () {
         summaryTitle.push(' ');
       }
       summaryTitle.push('* ', '[' + titles.slice(1, titles.length).join('') + '](README.md)', '\n\r');
-      fs.appendFileSync('./gitbook/single/SUMMARY.md', summaryTitle.join(''));
+      fs.appendFileSync('gitbook/single/SUMMARY.md', summaryTitle.join(''));
     }
   });
 });
 
 // gitbook build
 gulp.task('build', ['write'], shell.task([
-  'gitbook build ./gitbook/single/'
+  'gitbook build gitbook/single/'
 ]));
 
 // deploy 单文件
 gulp.task('deploy', ['build'], function () {
-  fs.readFile('./docs/index.html', 'utf-8', function (err, html) {
+  fs.readFile('docs/index.html', 'utf-8', function (err, html) {
     if (err) {
       console.error('===not find index.html===');
       return;
@@ -64,16 +65,16 @@ gulp.task('deploy', ['build'], function () {
         that.removeClass('active');
       }
     });
-    fs.writeFile('./docs/index.html', $.html());
+    fs.writeFile('docs/index.html', $.html());
   });
 });
 
 gulp.task('m2h-s', ['deploy'], function () {
-  gulp.src('./docs').pipe(webSever({
+  gulp.src('docs').pipe(webSever({
     port:'9090',
     livereload: true,
     open: true,
-    fallback: './index.html'
+    fallback: 'index.html'
   }));
 });
 
@@ -81,12 +82,12 @@ gulp.task('m2h-s', ['deploy'], function () {
 
 // clean
 gulp.task('clean', shell.task([
-  'rm -rf ./docs/**/*.*'
+  'rm -rf docs/**/*.*'
 ]));
 
 // create2 summary.md
 gulp.task('create2', ['clean'], function () {
-  fs.writeFile('./gitbook/multi/SUMMARY.md', '');
+  fs.writeFile('gitbook/multi/SUMMARY.md', '');
 });
 
 // build2
@@ -97,7 +98,7 @@ gulp.task('build2', ['create2'], function () {
     list.sort();
     // 获取.md文件列表并异步执行
     for (var i = 0; i < list.length; i++) {
-      var fileString = list[i].replace('./' + dir + '/', '');
+      var fileString = list[i].replace('' + dir + '/', '');
       if (fileString.indexOf('README.md') === 0) {
         summaryArray.push('* [' + firstLineSync(list[i]) + '](README.md)\n\r');
         continue;
@@ -116,7 +117,7 @@ gulp.task('build2', ['create2'], function () {
       // 添加SUMMARY目录
       summaryArray.push('* [' + fileContent + '](' + fileString + ')\n\r');
     }
-    fs.writeFile('./gitbook/multi/SUMMARY.md', summaryArray.join(''));
+    fs.writeFile('gitbook/multi/SUMMARY.md', summaryArray.join(''));
   }, {
     dir: dir,
     name: 'md'
@@ -132,22 +133,22 @@ gulp.task('build2', ['create2'], function () {
 
 // deploy2
 gulp.task('deploy2', ['build2'], shell.task([
-  'gitbook build ./gitbook/multi ./docs'
+  'gitbook build gitbook/multi docs'
 ]));
 
 // m2h-m
 gulp.task('default', ['deploy2'], function () {
-  gulp.src('./docs').pipe(webSever({
+  gulp.src('docs').pipe(webSever({
     host: '127.0.0.1',
     port:'9091',
     livereload: true,
     open: true,
-    fallback: './index.html'
+    fallback: 'index.html'
   }));
 });
 
 gulp.task('watch', function() {
     'use strict';
-    gulp.watch('./gitbook/multi/**/*.md', ['deploy2']);
+    gulp.watch('gitbook/multi/**/*.md', ['deploy2']);
 });
 
