@@ -15,13 +15,13 @@ var path = require('path');
 
 // create summary.md
 gulp.task('create', function () {
-  fs.writeFile('gitbook/single/SUMMARY.md', '');
+  fs.writeFile('./gitbook/single/SUMMARY.md', '');
 });
 
 // write summary.md
 gulp.task('write', ['create'], function () {
   var isBash = false;
-  lineRead.readLineFromFile('gitbook/single/README.md').forEach(function (line) {
+  lineRead.readLineFromFile('./gitbook/single/README.md').forEach(function (line) {
     // 代码片段#号过滤
     if (line.indexOf('``` bash') === 0) {
       isBash = true;
@@ -36,19 +36,19 @@ gulp.task('write', ['create'], function () {
         summaryTitle.push(' ');
       }
       summaryTitle.push('* ', '[' + titles.slice(1, titles.length).join('') + '](README.md)', '\n\r');
-      fs.appendFileSync('gitbook/single/SUMMARY.md', summaryTitle.join(''));
+      fs.appendFileSync('./gitbook/single/SUMMARY.md', summaryTitle.join(''));
     }
   });
 });
 
 // gitbook build
 gulp.task('build', ['write'], shell.task([
-  'gitbook build gitbook/single/'
+  'gitbook build ./gitbook/single/ ./docs'
 ]));
 
 // deploy 单文件
 gulp.task('deploy', ['build'], function () {
-  fs.readFile('docs/index.html', 'utf-8', function (err, html) {
+  fs.readFile('./docs/index.html', 'utf-8', function (err, html) {
     if (err) {
       console.error('===not find index.html===');
       return;
@@ -65,7 +65,7 @@ gulp.task('deploy', ['build'], function () {
         that.removeClass('active');
       }
     });
-    fs.writeFile('docs/index.html', $.html());
+    fs.writeFile('./docs/index.html', $.html());
   });
 });
 
@@ -74,58 +74,65 @@ gulp.task('m2h-s', ['deploy'], function () {
     port:'9090',
     livereload: true,
     open: true,
-    fallback: 'index.html'
+    fallback: './index.html'
   }));
 });
 
 // ===================================================
 
-// clean
-gulp.task('clean', shell.task([
-  'rm -rf docs/**/*.*'
-]));
-
 // create2 summary.md
-gulp.task('create2', ['clean'], function () {
-  fs.writeFile('gitbook/multi/SUMMARY.md', '');
+gulp.task('create2', function () {
+  fs.writeFile('./gitbook/multi/SUMMARY.md', '');
 });
 
 // build2
 gulp.task('build2', ['create2'], function () {
-  var dir = 'gitbook/multi';
+  var dir = path.normalize('./gitbook/multi');
   var summaryArray = [];
   listFiles(function (list) {
     list.sort();
     // 获取.md文件列表并异步执行
     for (var i = 0; i < list.length; i++) {
-      var fileString = list[i].replace('' + dir + '/', '');
+      var fileString = null;
+      if (list[i].indexOf('.\\') >= 0) {
+        fileString = list[i].replace('.\\' + dir + '\\', '');
+      } else if (list[i].indexOf('./') >= 0) {
+        fileString = list[i].replace('./' + dir + '/', '');
+      }
       if (fileString.indexOf('README.md') === 0) {
         summaryArray.push('* [' + firstLineSync(list[i]) + '](README.md)\n\r');
         continue;
       } else if (fileString.indexOf('SUMMARY.md') === 0) {
         continue;
       }
-      var fileArray = fileString.split('/');
+      var fileArray = null;
+      if (fileString.indexOf('/') >= 0) {
+        fileArray = fileString.split('/');
+      } else if (fileString.indexOf('\\') >= 0) {
+        fileArray = fileString.split('\\');
+      } else {
+        fileArray = fileString.split('/');
+      }
       for (var j = 1; j < fileArray.length; j++) {
         summaryArray.push(' ');
       }
       // 获取SUMMARY标题
       var fileContent = firstLineSync(list[i]);
       if (!fileContent) {
-        fileContent = fileArray.slice(fileArray.length - 1).replace('.md', '');
+        fileContent = fileArray.slice(fileArray.length - 1).join('').replace('.md', '');
       }
       // 添加SUMMARY目录
       summaryArray.push('* [' + fileContent + '](' + fileString + ')\n\r');
     }
-    fs.writeFile('gitbook/multi/SUMMARY.md', summaryArray.join(''));
+    fs.writeFile('./gitbook/multi/SUMMARY.md', summaryArray.join(''));
   }, {
     dir: dir,
     name: 'md'
   });
 
   // get first line sync
-  function firstLineSync(path) {
-    var fileObject = fs.readFileSync(path);
+  function firstLineSync(url) {
+    var fileObject = fs.readFileSync(url.replace(/(\n)+|(\r\n)+|(\r)+|(\n\r)+/gi, ''));
     var b = new Buffer(fileObject);
     return (b.toString() || '').split('\n')[0].replace(/^[#, ]]*/, '');
   }
@@ -133,7 +140,7 @@ gulp.task('build2', ['create2'], function () {
 
 // deploy2
 gulp.task('deploy2', ['build2'], shell.task([
-  'gitbook build gitbook/multi docs'
+  'gitbook build ./gitbook/multi ./docs'
 ]));
 
 // m2h-m
@@ -143,12 +150,7 @@ gulp.task('default', ['deploy2'], function () {
     port:'9091',
     livereload: true,
     open: true,
-    fallback: 'index.html'
+    fallback: './index.html'
   }));
-});
-
-gulp.task('watch', function() {
-    'use strict';
-    gulp.watch('gitbook/multi/**/*.md', ['deploy2']);
 });
 
