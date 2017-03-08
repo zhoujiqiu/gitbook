@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title> Toast
+        <title> DatePicker
  · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
@@ -58,8 +58,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="field.html" />
     
-    <link rel="prev" href="tabBar.html" />
+    
+    <link rel="prev" href="datecalendar.html" />
     
 
     </head>
@@ -144,7 +146,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="datepicker.html">
+        <li class="chapter active" data-level="1.5" data-path="datepicker.html">
             
                 <a href="datepicker.html">
             
@@ -256,7 +258,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.13" data-path="toast.html">
+        <li class="chapter " data-level="1.13" data-path="toast.html">
             
                 <a href="toast.html">
             
@@ -300,7 +302,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." > Toast
+        <a href="." > DatePicker
 </a>
     </h1>
 </div>
@@ -316,25 +318,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="toast">Toast</h1>
-<h5 id="&#x7B80;&#x77ED;&#x7684;&#x6D88;&#x606F;&#x63D0;&#x793A;&#x6846;">&#x7B80;&#x77ED;&#x7684;&#x6D88;&#x606F;&#x63D0;&#x793A;&#x6846;</h5>
+                                <h1 id="datepicker">DatePicker</h1>
+<h5 id="&#x65E5;&#x671F;&#x9009;&#x62E9;&#x7EC4;&#x4EF6;">&#x65E5;&#x671F;&#x9009;&#x62E9;&#x7EC4;&#x4EF6;</h5>
 <h4 id="&#x5F15;&#x5165;">&#x5F15;&#x5165;</h4>
-<pre><code class="lang-bash">import Toast from <span class="hljs-string">&apos;toon-ui/lib/components/toast&apos;</span>
+<pre><code class="lang-bash">  import datePicker from <span class="hljs-string">&apos;toon-ui/lib/components/DatePicker&apos;</span>
+  components: {
+    datePicker
+  }
 </code></pre>
 <h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
-<p>&#x57FA;&#x672C;&#x7528;&#x6CD5;</p>
-<pre><code class="lang-bash">Toast(<span class="hljs-string">&apos;&#x63D0;&#x793A;&#x4FE1;&#x606F;&apos;</span>);
+<pre><code>  &lt;date-picker v-bind:msg=&quot;pickerParams&quot;&gt;&lt;/date-picker&gt;
+</code></pre><p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-bash">    pickerParams: {date: new Date()}
 </code></pre>
-<p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
-<pre><code class="lang-bash">Toast({
-  message: <span class="hljs-string">&apos;&#x63D0;&#x793A;&#x4FE1;&#x606F;&apos;</span>,
-  position: <span class="hljs-string">&apos;bottom&apos;</span>, // &#x663E;&#x793A;&#x4F4D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;<span class="hljs-string">&apos;middle&apos;</span>&#x5C45;&#x4E2D;
-  duration: 5000, // &#x6301;&#x7EED;&#x65F6;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;3000&#x6BEB;&#x79D2;
-  iconClass: <span class="hljs-string">&apos;iconfont icon-success&apos;</span> // &#x4E0A;&#x65B9;&#x663E;&#x793A;icon&#x56FE;&#x6807;&#xFF0C;&#x56FE;&#x6807;&#x9700;&#x81EA;&#x884C;&#x51C6;&#x5907;
-});
+<p>&#x4F7F;&#x7528;</p>
+<pre><code class="lang-bash">  events: {
+    hidePicker: <span class="hljs-keyword">function</span> (data) {
+      <span class="hljs-keyword">if</span> (data) {
+        alert(data.getFullYear() + <span class="hljs-string">&apos;&#x5E74;&apos;</span> + (data.getMonth() + 1) + <span class="hljs-string">&apos;&#x6708;&apos;</span> + data.getDate() + <span class="hljs-string">&apos;&#x65E5;&apos;</span>)
+      }
+    }
+  }
 </code></pre>
 <h4 id="&#x6F14;&#x793A;">&#x6F14;&#x793A;</h4>
-<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/toast" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
+<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/datetimePicker" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
 
                                 
                                 </section>
@@ -362,11 +369,16 @@
 
             
                 
-                <a href="tabBar.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page:  TabBar
+                <a href="datecalendar.html" class="navigation navigation-prev " aria-label="Previous page:  DateCalendar
 ">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="field.html" class="navigation navigation-next " aria-label="Next page:  Field
+">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -375,7 +387,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" Toast\n","level":"1.13","depth":1,"previous":{"title":" TabBar\n","level":"1.12","depth":1,"path":"tabBar.md","ref":"tabBar.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"toast.md","mtime":"2017-03-03T01:28:40.634Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:22:15.602Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":" DatePicker\n","level":"1.5","depth":1,"next":{"title":" Field\n","level":"1.6","depth":1,"path":"field.md","ref":"field.md","articles":[]},"previous":{"title":" DateCalendar\n","level":"1.4","depth":1,"path":"datecalendar.md","ref":"datecalendar.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datepicker.md","mtime":"2017-03-08T02:12:24.214Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:22:15.602Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
