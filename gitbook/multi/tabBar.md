@@ -5,7 +5,7 @@
 #### 引入
 
 ``` bash
-import TabBar from 'toon-ui/lib/components/tabBar'
+import TTabbar from 'toon-ui/lib/components/tabbar'
 
 components: {
     TTabbar

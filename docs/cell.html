@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title> Checklist · GitBook</title>
+        <title> Cell · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="field.html" />
+    <link rel="next" href="checklist.html" />
     
     
-    <link rel="prev" href="cell.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="cell.html">
+        <li class="chapter active" data-level="1.2" data-path="cell.html">
             
                 <a href="cell.html">
             
@@ -115,7 +115,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="checklist.html">
+        <li class="chapter " data-level="1.3" data-path="checklist.html">
             
                 <a href="checklist.html">
             
@@ -249,7 +249,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." > Checklist</a>
+        <a href="." > Cell</a>
     </h1>
 </div>
 
@@ -264,65 +264,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="checklist">Checklist</h1>
-<h5 id="&#x590D;&#x9009;&#x6846;">&#x590D;&#x9009;&#x6846;</h5>
+                                <h1 id="cell">Cell</h1>
+<h5 id="&#x5217;&#x8868;&#x4FE1;&#x606F;&#x5C55;&#x793A;">&#x5217;&#x8868;&#x4FE1;&#x606F;&#x5C55;&#x793A;</h5>
 <h4 id="&#x5F15;&#x5165;">&#x5F15;&#x5165;</h4>
-<pre><code class="lang-bash">import TabBar from <span class="hljs-string">&apos;toon-ui/lib/components/Checklist&apos;</span>
+<pre><code class="lang-bash">import tCell from <span class="hljs-string">&apos;toon-ui/lib/components/tcell&apos;</span>
 
-components: {
-    TChecklist
+<span class="hljs-built_in">export</span> default {
+  components: {
+    tCell
   }
+}
 </code></pre>
 <h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
-<pre><code> &lt;t-checklist
-      class=&quot;page-part&quot;
-      title=&quot;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;
-      :options=&quot;options1&quot;&gt;
-    &lt;/t-checklist&gt;
-    &lt;t-checklist
-      class=&quot;page-part&quot;
-      title=&quot;&#x7B2C;&#x4E8C;&#x4E2A;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;
-      :options=&quot;options2&quot;&gt;
-    &lt;/t-checklist&gt;
-    &lt;t-checklist
-      align=&quot;right&quot;
-      class=&quot;page-part&quot;
-      title=&quot;&#x53F3;&#x5BF9;&#x9F50;&quot;
-      :options=&quot;options3&quot;&gt;
-    &lt;/t-checklist&gt;
-</code></pre><p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
-<pre><code class="lang-bash">this.options1 = {
-      hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x9879;A1&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
-      optionList: [<span class="hljs-string">&apos;&#x9009;&#x9879;A1&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;B1&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;C1&apos;</span>]
-    }
-    this.options3 = {
-      hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x9879;A3&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
-      optionList: [<span class="hljs-string">&apos;&#x9009;&#x9879;A3&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;B3&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;C3&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;D3&apos;</span>]}
-    this.options2 = {
-      hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x4E2D;&#x7981;&#x7528;&#x7684;&#x503C;&apos;</span>,<span class="hljs-string">&apos;&#x503C;B4&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
-      optionList:
-      [{
-        label: <span class="hljs-string">&apos;&#x88AB;&#x7981;&#x7528;&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x503C;F&apos;</span>,
-        disabled: <span class="hljs-literal">true</span>
-      },
-      {
-        label: <span class="hljs-string">&apos;&#x9009;&#x4E2D;&#x7981;&#x7528;&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x9009;&#x4E2D;&#x7981;&#x7528;&#x7684;&#x503C;&apos;</span>,
-        disabled: <span class="hljs-literal">true</span>
-      },
-      {
-        label: <span class="hljs-string">&apos;&#x9009;&#x9879;A4&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x503C;A&apos;</span>
-      },
-      {
-        label: <span class="hljs-string">&apos;&#x9009;&#x9879;B&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x503C;B4&apos;</span>
-      }]
-    };
+<p>&#x57FA;&#x672C;&#x7528;&#x6CD5;</p>
+<pre><code class="lang-bash">&lt;t-cell title=<span class="hljs-string">&quot;&#x6807;&#x9898;&#x6587;&#x5B57;&quot;</span>&gt;&lt;/t-cell&gt;
+&lt;t-cell title=<span class="hljs-string">&quot;&#x6807;&#x9898;&#x6587;&#x5B57;&quot;</span> value=<span class="hljs-string">&quot;&#x8BF4;&#x660E;&#x6587;&#x5B57;&quot;</span>&gt;&lt;/t-cell&gt;
+</code></pre>
+<p>&#x5E26;&#x94FE;&#x63A5; <code>is-link</code></p>
+<pre><code class="lang-bash">&lt;t-cell title=<span class="hljs-string">&quot;&#x6807;&#x9898;&#x6587;&#x5B57;&quot;</span> is-link value=<span class="hljs-string">&quot;&#x5E26;&#x94FE;&#x63A5;&quot;</span>&gt;&lt;/t-cell&gt;
+</code></pre>
+<p>&#x5E26; <code>icon</code></p>
+<pre><code class="lang-bash">&lt;t-cell title=<span class="hljs-string">&quot;&#x6807;&#x9898;&#x6587;&#x5B57;&quot;</span> icon=<span class="hljs-string">&quot;more&quot;</span> value=<span class="hljs-string">&quot;&#x5E26; icon&quot;</span>&gt;&lt;/t-cell&gt;
+</code></pre>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-bash">&lt;t-cell title=<span class="hljs-string">&quot;&#x6807;&#x9898;&#x6587;&#x5B57;&quot;</span> is-link&gt;
+  &lt;span style=<span class="hljs-string">&quot;color: green&quot;</span>&gt;&#x8FD9;&#x91CC;&#x662F;&#x5143;&#x7D20;&lt;/span&gt;
+&lt;/t-cell&gt;
 </code></pre>
 <h4 id="&#x6F14;&#x793A;">&#x6F14;&#x793A;</h4>
-<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/checklist" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
+<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/tcell" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
 
                                 
                                 </section>
@@ -350,12 +320,12 @@ components: {
 
             
                 
-                <a href="cell.html" class="navigation navigation-prev " aria-label="Previous page:  Cell">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Toon-ui vue基础组件库">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="field.html" class="navigation navigation-next " aria-label="Next page:  Field">
+                <a href="checklist.html" class="navigation navigation-next " aria-label="Next page:  Checklist">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -366,7 +336,7 @@ components: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" Checklist","level":"1.3","depth":1,"next":{"title":" Field","level":"1.4","depth":1,"path":"field.md","ref":"field.md","articles":[]},"previous":{"title":" Cell","level":"1.2","depth":1,"path":"cell.md","ref":"cell.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"checklist.md","mtime":"2017-03-07T03:44:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:01:36.839Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":" Cell","level":"1.2","depth":1,"next":{"title":" Checklist","level":"1.3","depth":1,"path":"checklist.md","ref":"checklist.md","articles":[]},"previous":{"title":"Toon-ui vue基础组件库","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cell.md","mtime":"2017-03-07T05:49:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:01:36.839Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

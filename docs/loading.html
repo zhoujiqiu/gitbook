@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title> Checklist · GitBook</title>
+        <title> Loading · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="field.html" />
+    <link rel="next" href="messagebox.html" />
     
     
-    <link rel="prev" href="cell.html" />
+    <link rel="prev" href="field.html" />
     
 
     </head>
@@ -115,7 +115,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="checklist.html">
+        <li class="chapter " data-level="1.3" data-path="checklist.html">
             
                 <a href="checklist.html">
             
@@ -141,7 +141,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="loading.html">
+        <li class="chapter active" data-level="1.5" data-path="loading.html">
             
                 <a href="loading.html">
             
@@ -249,7 +249,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." > Checklist</a>
+        <a href="." > Loading</a>
     </h1>
 </div>
 
@@ -264,65 +264,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="checklist">Checklist</h1>
-<h5 id="&#x590D;&#x9009;&#x6846;">&#x590D;&#x9009;&#x6846;</h5>
+                                <h1 id="loading">Loading</h1>
+<h5 id="&#x52A0;&#x8F7D;&#x63D0;&#x793A;&#x6846;">&#x52A0;&#x8F7D;&#x63D0;&#x793A;&#x6846;</h5>
 <h4 id="&#x5F15;&#x5165;">&#x5F15;&#x5165;</h4>
-<pre><code class="lang-bash">import TabBar from <span class="hljs-string">&apos;toon-ui/lib/components/Checklist&apos;</span>
-
-components: {
-    TChecklist
-  }
+<pre><code class="lang-bash">import Loading from <span class="hljs-string">&apos;toon-ui/lib/components/loading&apos;</span>
 </code></pre>
 <h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
-<pre><code> &lt;t-checklist
-      class=&quot;page-part&quot;
-      title=&quot;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;
-      :options=&quot;options1&quot;&gt;
-    &lt;/t-checklist&gt;
-    &lt;t-checklist
-      class=&quot;page-part&quot;
-      title=&quot;&#x7B2C;&#x4E8C;&#x4E2A;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;
-      :options=&quot;options2&quot;&gt;
-    &lt;/t-checklist&gt;
-    &lt;t-checklist
-      align=&quot;right&quot;
-      class=&quot;page-part&quot;
-      title=&quot;&#x53F3;&#x5BF9;&#x9F50;&quot;
-      :options=&quot;options3&quot;&gt;
-    &lt;/t-checklist&gt;
-</code></pre><p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
-<pre><code class="lang-bash">this.options1 = {
-      hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x9879;A1&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
-      optionList: [<span class="hljs-string">&apos;&#x9009;&#x9879;A1&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;B1&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;C1&apos;</span>]
-    }
-    this.options3 = {
-      hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x9879;A3&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
-      optionList: [<span class="hljs-string">&apos;&#x9009;&#x9879;A3&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;B3&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;C3&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;D3&apos;</span>]}
-    this.options2 = {
-      hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x4E2D;&#x7981;&#x7528;&#x7684;&#x503C;&apos;</span>,<span class="hljs-string">&apos;&#x503C;B4&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
-      optionList:
-      [{
-        label: <span class="hljs-string">&apos;&#x88AB;&#x7981;&#x7528;&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x503C;F&apos;</span>,
-        disabled: <span class="hljs-literal">true</span>
-      },
-      {
-        label: <span class="hljs-string">&apos;&#x9009;&#x4E2D;&#x7981;&#x7528;&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x9009;&#x4E2D;&#x7981;&#x7528;&#x7684;&#x503C;&apos;</span>,
-        disabled: <span class="hljs-literal">true</span>
-      },
-      {
-        label: <span class="hljs-string">&apos;&#x9009;&#x9879;A4&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x503C;A&apos;</span>
-      },
-      {
-        label: <span class="hljs-string">&apos;&#x9009;&#x9879;B&apos;</span>,
-        value: <span class="hljs-string">&apos;&#x503C;B4&apos;</span>
-      }]
-    };
+<p>&#x57FA;&#x672C;&#x7528;&#x6CD5;</p>
+<pre><code class="lang-bash">Loading.open()
+</code></pre>
+<p>&#x5E26;&#x6587;&#x5B57;&#x7684;&#x52A0;&#x8F7D;&#x63D0;&#x793A;&#x6846;</p>
+<pre><code class="lang-bash">Loading.open(<span class="hljs-string">&apos;&#x52A0;&#x8F7D;&#x4E2D;...&apos;</span>)
+</code></pre>
+<p>&#x8C03;&#x7528; &#xFF40;close&#xFF40; &#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x5173;&#x95ED;</p>
+<pre><code class="lang-bash">Loading.close()
 </code></pre>
 <h4 id="&#x6F14;&#x793A;">&#x6F14;&#x793A;</h4>
-<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/checklist" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
+<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/loading" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
 
                                 
                                 </section>
@@ -350,12 +308,12 @@ components: {
 
             
                 
-                <a href="cell.html" class="navigation navigation-prev " aria-label="Previous page:  Cell">
+                <a href="field.html" class="navigation navigation-prev " aria-label="Previous page:  Field">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="field.html" class="navigation navigation-next " aria-label="Next page:  Field">
+                <a href="messagebox.html" class="navigation navigation-next " aria-label="Next page:  MessageBox">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -366,7 +324,7 @@ components: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" Checklist","level":"1.3","depth":1,"next":{"title":" Field","level":"1.4","depth":1,"path":"field.md","ref":"field.md","articles":[]},"previous":{"title":" Cell","level":"1.2","depth":1,"path":"cell.md","ref":"cell.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"checklist.md","mtime":"2017-03-07T03:44:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:01:36.839Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":" Loading","level":"1.5","depth":1,"next":{"title":" MessageBox","level":"1.6","depth":1,"path":"messagebox.md","ref":"messagebox.md","articles":[]},"previous":{"title":" Field","level":"1.4","depth":1,"path":"field.md","ref":"field.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"loading.md","mtime":"2017-03-07T03:50:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:01:36.839Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,7 +1,7 @@
  Toon-ui vue基础组件库
 
 ## 说明
-> 前端开发中，随着业务的增多，出于效率的考虑，我们对于组件化开发的需求也越来越迫切。最近公司也在推行组件化，参考了其他的一些组件库的思路，开发了一套基于vue1.X的UI基础组件库。
+> 前端开发中，随着业务的增多，出于效率的考虑，我们对于组件化开发的需求也越来越迫切。最近公司也在推行组件化，参考了element等其他的组件库的思路，开发了一套基于vue1.X的UI基础组件库。
 
 ## 快速安装
 
@@ -11,8 +11,8 @@ npm install toon-ui
 ```
 
 ``` bash
-#引入组件
-import Dialog from 'toon-ui/lib/components/dialog'
+#引入某个组件（按需引入）
+import Toast from 'toon-ui/lib/components/toast'
 ```
 
 ## 演示
