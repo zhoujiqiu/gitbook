@@ -5,7 +5,7 @@
 #### 引入
 
 ``` bash
-import TabBar from 'toon-ui/lib/components/Checklist'
+import TChecklist from 'toon-ui/lib/components/Checklist'
 
 components: {
     TChecklist
@@ -13,7 +13,7 @@ components: {
 
 ```
 #### 例子
-```
+``` bash
  <t-checklist
       class="page-part"
       title="复选框列表"

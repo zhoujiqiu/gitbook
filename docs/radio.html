@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title> TabBar · GitBook</title>
+        <title> Radio · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="toast.html" />
+    <link rel="next" href="switch.html" />
     
     
-    <link rel="prev" href="switch.html" />
+    <link rel="prev" href="pullDown.html" />
     
 
     </head>
@@ -206,7 +206,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="radio.html">
+        <li class="chapter active" data-level="1.10" data-path="radio.html">
             
                 <a href="radio.html">
             
@@ -232,7 +232,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.12" data-path="tabBar.html">
+        <li class="chapter " data-level="1.12" data-path="tabBar.html">
             
                 <a href="tabBar.html">
             
@@ -288,7 +288,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." > TabBar</a>
+        <a href="." > Radio</a>
     </h1>
 </div>
 
@@ -303,26 +303,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="tabbar">TabBar</h1>
-<h5 id="&#x9009;&#x9879;&#x5361;&#xFF0C;&#x70B9;&#x51FB;-tab-&#x4F1A;&#x5207;&#x6362;&#x663E;&#x793A;&#x7684;&#x9875;&#x9762;">&#x9009;&#x9879;&#x5361;&#xFF0C;&#x70B9;&#x51FB; tab &#x4F1A;&#x5207;&#x6362;&#x663E;&#x793A;&#x7684;&#x9875;&#x9762;</h5>
+                                <h1 id="radio">Radio</h1>
+<h5 id="&#x5355;&#x9009;&#x6846;&#x7EC4;&#x4EF6;">&#x5355;&#x9009;&#x6846;&#x7EC4;&#x4EF6;</h5>
 <h4 id="&#x5F15;&#x5165;">&#x5F15;&#x5165;</h4>
-<pre><code class="lang-bash">import TTabbar from <span class="hljs-string">&apos;toon-ui/lib/components/tabbar&apos;</span>
+<pre><code class="lang-bash">import MRadio from <span class="hljs-string">&apos;toon-ui/lib/components/radio&apos;</span>
 
 components: {
-    TTabbar
+    MRadio
   }
 </code></pre>
 <h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
-<pre><code> &lt;t-tabbar v-bind:tabs=&apos;tabs&apos;&gt;&lt;/t-tabbar&gt;
-</code></pre><p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
-<pre><code class="lang-bash">tabs:{
-    isSelect: 0, // &#x7B2C;&#x51E0;&#x4E2A;&#x9009;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x4F20;0&#x5F00;&#x59CB;&#x8BA1;
-    isSelectCon: [<span class="hljs-string">&apos;&#x6211;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5E74;&#x5EA6;&#x5185;&#x5BB9;&apos;</span>, <span class="hljs-string">&apos;&#x6211;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6708;&#x5EA6;&#x5185;&#x5BB9;&apos;</span>, <span class="hljs-string">&apos;&#x6211;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5B63;&#x5EA6;&#x5185;&#x5BB9;&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x6570;&#x7EC4;&#xFF0C;&#x65E0;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;
-    tabList: [<span class="hljs-string">&apos;&#x5E74;&#x5EA6;&apos;</span>, <span class="hljs-string">&apos;&#x6708;&#x5EA6;&apos;</span>, <span class="hljs-string">&apos;&#x5B63;&#x5EA6;&apos;</span>] // tab&#x7684;title&#x503C;&#x6570;&#x7EC4;&#xFF0C;&#x9ED8;&#x8BA4;&#x65E0;&#x503C;
+<pre><code class="lang-bash">&lt;m-radio
+    align=<span class="hljs-string">&quot;right&quot;</span> 
+    title=<span class="hljs-string">&quot;radio list&quot;</span>
+    v-model=<span class="hljs-string">&quot;value&quot;</span>
+    :options=<span class="hljs-string">&quot;options&quot;</span>&gt;
+&lt;/m-radio&gt;
+</code></pre>
+<p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">data</span></span> () {
+  <span class="hljs-built_in">return</span> {
+    options: [
+      {
+        label: <span class="hljs-string">&apos;Disabled option&apos;</span>, //label&#x9009;&#x9879;
+        value: <span class="hljs-string">&apos;valueF&apos;</span>, // value&#x503C;
+        disabled: <span class="hljs-literal">true</span> // &#x662F;&#x5426;&#x7981;&#x7528;
+      },
+      {
+        label: <span class="hljs-string">&apos;optionA&apos;</span>,
+        value: <span class="hljs-string">&apos;valueA&apos;</span>
+      },
+      {
+        label: <span class="hljs-string">&apos;optionB&apos;</span>,
+        value: <span class="hljs-string">&apos;valueB&apos;</span>
+      }
+    ]
+  }
 }
 </code></pre>
 <h4 id="&#x6F14;&#x793A;">&#x6F14;&#x793A;</h4>
-<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/tab" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
+<p><a href="https://zhoujiqiu.github.io/toon-ui/dist/#!/demo/radio" target="_blank">&#x70B9;&#x51FB;&#x67E5;&#x770B;DEMO</a></p>
 
                                 
                                 </section>
@@ -350,12 +370,12 @@ components: {
 
             
                 
-                <a href="switch.html" class="navigation navigation-prev " aria-label="Previous page:  Switch">
+                <a href="pullDown.html" class="navigation navigation-prev " aria-label="Previous page:  Pulldown">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="toast.html" class="navigation navigation-next " aria-label="Next page:  Toast">
+                <a href="switch.html" class="navigation navigation-next " aria-label="Next page:  Switch">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -366,7 +386,7 @@ components: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" TabBar","level":"1.12","depth":1,"next":{"title":" Toast","level":"1.13","depth":1,"path":"toast.md","ref":"toast.md","articles":[]},"previous":{"title":" Switch","level":"1.11","depth":1,"path":"switch.md","ref":"switch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tabBar.md","mtime":"2017-03-07T08:00:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T07:49:18.709Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":" Radio","level":"1.10","depth":1,"next":{"title":" Switch","level":"1.11","depth":1,"path":"switch.md","ref":"switch.md","articles":[]},"previous":{"title":" Pulldown","level":"1.9","depth":1,"path":"pullDown.md","ref":"pullDown.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"radio.md","mtime":"2017-03-08T03:19:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T07:49:18.709Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -102,7 +102,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="cell.html">
+        <li class="chapter " data-level="1.2" data-path="button.html">
+            
+                <a href="button.html">
+            
+                    
+                     Button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="cell.html">
             
                 <a href="cell.html">
             
@@ -115,7 +128,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="checklist.html">
+        <li class="chapter active" data-level="1.4" data-path="checklist.html">
             
                 <a href="checklist.html">
             
@@ -128,7 +141,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="field.html">
+        <li class="chapter " data-level="1.5" data-path="field.html">
             
                 <a href="field.html">
             
@@ -141,7 +154,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="loading.html">
+        <li class="chapter " data-level="1.6" data-path="lazyload.html">
+            
+                <a href="lazyload.html">
+            
+                    
+                     Lazyload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="loading.html">
             
                 <a href="loading.html">
             
@@ -154,7 +180,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="messagebox.html">
+        <li class="chapter " data-level="1.8" data-path="messagebox.html">
             
                 <a href="messagebox.html">
             
@@ -167,7 +193,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="pullDown.html">
+        <li class="chapter " data-level="1.9" data-path="pullDown.html">
             
                 <a href="pullDown.html">
             
@@ -180,7 +206,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="switch.html">
+        <li class="chapter " data-level="1.10" data-path="radio.html">
+            
+                <a href="radio.html">
+            
+                    
+                     Radio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="switch.html">
             
                 <a href="switch.html">
             
@@ -193,7 +232,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="tabBar.html">
+        <li class="chapter " data-level="1.12" data-path="tabBar.html">
             
                 <a href="tabBar.html">
             
@@ -206,7 +245,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="toast.html">
+        <li class="chapter " data-level="1.13" data-path="toast.html">
             
                 <a href="toast.html">
             
@@ -267,30 +306,31 @@
                                 <h1 id="checklist">Checklist</h1>
 <h5 id="&#x590D;&#x9009;&#x6846;">&#x590D;&#x9009;&#x6846;</h5>
 <h4 id="&#x5F15;&#x5165;">&#x5F15;&#x5165;</h4>
-<pre><code class="lang-bash">import TabBar from <span class="hljs-string">&apos;toon-ui/lib/components/Checklist&apos;</span>
+<pre><code class="lang-bash">import TChecklist from <span class="hljs-string">&apos;toon-ui/lib/components/Checklist&apos;</span>
 
 components: {
     TChecklist
   }
 </code></pre>
 <h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
-<pre><code> &lt;t-checklist
-      class=&quot;page-part&quot;
-      title=&quot;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;
-      :options=&quot;options1&quot;&gt;
+<pre><code class="lang-bash"> &lt;t-checklist
+      class=<span class="hljs-string">&quot;page-part&quot;</span>
+      title=<span class="hljs-string">&quot;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;</span>
+      :options=<span class="hljs-string">&quot;options1&quot;</span>&gt;
     &lt;/t-checklist&gt;
     &lt;t-checklist
-      class=&quot;page-part&quot;
-      title=&quot;&#x7B2C;&#x4E8C;&#x4E2A;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;
-      :options=&quot;options2&quot;&gt;
+      class=<span class="hljs-string">&quot;page-part&quot;</span>
+      title=<span class="hljs-string">&quot;&#x7B2C;&#x4E8C;&#x4E2A;&#x590D;&#x9009;&#x6846;&#x5217;&#x8868;&quot;</span>
+      :options=<span class="hljs-string">&quot;options2&quot;</span>&gt;
     &lt;/t-checklist&gt;
     &lt;t-checklist
-      align=&quot;right&quot;
-      class=&quot;page-part&quot;
-      title=&quot;&#x53F3;&#x5BF9;&#x9F50;&quot;
-      :options=&quot;options3&quot;&gt;
+      align=<span class="hljs-string">&quot;right&quot;</span>
+      class=<span class="hljs-string">&quot;page-part&quot;</span>
+      title=<span class="hljs-string">&quot;&#x53F3;&#x5BF9;&#x9F50;&quot;</span>
+      :options=<span class="hljs-string">&quot;options3&quot;</span>&gt;
     &lt;/t-checklist&gt;
-</code></pre><p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
+</code></pre>
+<p>&#x53C2;&#x6570;&#x914D;&#x7F6E;</p>
 <pre><code class="lang-bash">this.options1 = {
       hasChecked: [<span class="hljs-string">&apos;&#x9009;&#x9879;A1&apos;</span>], // &#x9009;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0E;optionList&#x4E2D;&#x7684;value&#x76F8;&#x540C;&#x5373;&#x4E3A;&#x9009;&#x4E2D;
       optionList: [<span class="hljs-string">&apos;&#x9009;&#x9879;A1&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;B1&apos;</span>, <span class="hljs-string">&apos;&#x9009;&#x9879;C1&apos;</span>]
@@ -366,7 +406,7 @@ components: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" Checklist","level":"1.3","depth":1,"next":{"title":" Field","level":"1.4","depth":1,"path":"field.md","ref":"field.md","articles":[]},"previous":{"title":" Cell","level":"1.2","depth":1,"path":"cell.md","ref":"cell.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"checklist.md","mtime":"2017-03-07T03:44:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T02:01:36.839Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":" Checklist","level":"1.4","depth":1,"next":{"title":" Field","level":"1.5","depth":1,"path":"field.md","ref":"field.md","articles":[]},"previous":{"title":" Cell","level":"1.3","depth":1,"path":"cell.md","ref":"cell.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"checklist.md","mtime":"2017-03-08T03:12:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-08T07:49:18.709Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
